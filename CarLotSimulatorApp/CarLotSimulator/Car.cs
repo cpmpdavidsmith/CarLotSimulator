@@ -6,6 +6,10 @@ namespace CarLotSimulator
 	//default constructor
 		public Car()
 		{
+			//\/\/\/\/\/\this is and addition from a STATIC METHOD placed in
+			//"CarLot" class which is not entirely static.
+			CarLot.numberOfCars++;
+			//^^^^^class name.static member 
 		}
 		//custom constructor
 		public Car(int year, string make, string model, string engineNoise, string honkNoise, string isDriveable)

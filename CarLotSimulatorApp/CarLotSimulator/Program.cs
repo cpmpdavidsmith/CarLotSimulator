@@ -32,6 +32,7 @@ namespace CarLotSimulator
             futureCar.HonkNoise = "Beep";
             futureCar.IsDriveable = "Yes";
             davesCarLot.listOfCars.Add(futureCar);
+            //---------------------------car 1--------------------------
             //OBJECT INITIALIZER SYNTAX
             var dailyDriver = new Car()
             {
@@ -43,9 +44,14 @@ namespace CarLotSimulator
                 IsDriveable = "yes",
             };
             davesCarLot.listOfCars.Add(dailyDriver);
+
+
             //CUSTOM CONSTRUCTOR
             var kidMobile = new Car(2022, "BMW", "X6", "vrvrvr", "honk", "yes");
             davesCarLot.listOfCars.Add(kidMobile);
+
+
+
             //Call each of the methods for each car
             //CAR 1
             futureCar.MakeEngineNoise(futureCar.EngineNoise);
@@ -58,18 +64,25 @@ namespace CarLotSimulator
             kidMobile.MakeHonkNoise(kidMobile.HonkNoise);
             //*************BONUS*************//
 
-            // Set the properties utilizing the 3 different ways we learned about, one way for each car
+            // Set the properties utilizing the 3 different ways we learned
+            // about, one way for each car
 
             //*************BONUS X 2*************//
 
             //Create a CarLot class
             //It should have at least one property: a List of cars
-            //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
-            //At the end iterate through the list printing each of car's Year, Make, and Model to the console
-            foreach (var car in davesCarLot.listOfCars)
+            //Instanciate the a Carlot at the beginning of the program and as
+            //you create a car add the car to the list.
+            //At the end iterate through the list printing each of car's Year,
+            //Make, and Model to the console
+           foreach (var car in davesCarLot.listOfCars)
             {
                 Console.WriteLine();
                 Console.WriteLine(car.Year);
+                //OR
+                Console.WriteLine();
+                Console.WriteLine($"Year: {car.Year} ");
+
                 Console.WriteLine();
                 Console.WriteLine(car.Make);
                 Console.WriteLine();
@@ -80,8 +93,13 @@ namespace CarLotSimulator
                 Console.WriteLine(car.HonkNoise);
                 Console.WriteLine();
                 Console.WriteLine(car.IsDriveable);
-
             }
+            //This is te static exercise 2 STATIC METHOD CALL from the
+            //'CarLot' CLASS which contains the STATIC METHOD ->referenced
+            //in the "car" CLASS to INCRAMENT every instance created...
+            //The INCREMENT "CarLot.numberOfCars++" was placed in FIELD...
+            Console.WriteLine($"Number of cars created: {CarLot.numberOfCars}");
+
         }
     }
 }
